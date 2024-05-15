@@ -32,6 +32,57 @@
       <uri>model://ground_plane</uri>
       <pose>0 0 -0.1 0 -0 0</pose>
     </include>
+
+    <!-- Actor following waypoints -->
+    <actor name="actor">
+      <skin>
+        <filename>file://media/models/walk.dae</filename>
+      </skin>
+      <animation name="walking">
+        <filename>file://media/models/walk.dae</filename>
+        <!-- speedup animation -->
+        <interpolate_x>true</interpolate_x>
+        <interpolate_y>true</interpolate_y>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0.0</time>
+            <pose>11.226 -8.904 0 0 0 3.14</pose> 
+          </waypoint>
+          <waypoint>
+            <time>2.0</time>
+            <pose>5.034 -8.817 0 0 0 3.0</pose>
+          </waypoint>
+          <waypoint>
+            <time>4.0</time>
+            <pose>4.788 2.866 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>5.0</time>
+            <pose>3.813 6.646 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>6.0</time>
+            <pose>3.03 10.296 0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <!-- just stays where he is for a moment, pondering about life -->
+            <time>7.0</time>
+            <pose>3.03 10.296 0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>8.0</time>
+            <pose>-3.168 10.0 0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>9.0</time>
+            <pose>-3.584 6.708 0 0 0 -1.57</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
     <model name="aws_robomaker_hospital_floor_01_floor_1">
       <include>
         <uri>model://aws_robomaker_hospital_floor_01_floor</uri>
